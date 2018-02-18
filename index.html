@@ -71,12 +71,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         function init() {
-            var starttime = 10; 
+            var starttime = 10;
             var endtime = 16;
             var video = document.getElementById("backgroundVideo");
             //handler should be bound first
             video.addEventListener("timeupdate", function() {
-                if (this.currentTime >= endtime) {
+                if (this.currentTime >= endtime || this.currentTime < starttime) {
                     try {
                         video.currentTime = starttime;
                     } catch (ex) {
@@ -85,16 +85,12 @@
                 }
             }, false);
 
-            video.load();           
+            video.load();
             video.loop = true;
-                        try {
-                video.currentTime = starttime;
-            } catch (ex) {
-
-            }
             video.play(); //must call this otherwise can't seek on some browsers, e.g. Firefox 4
-            
-
+            try {
+                video.currentTime = starttime;
+            } catch (ex) {}
         }
 
     </script>
