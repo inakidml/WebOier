@@ -21,8 +21,8 @@
 
 <body class="text-center">
 
-<!--    <video loop autoplay poster="argazkiak/primerfotograma.jpg" id="backgroundVideo">-->
-       <video poster="argazkiak/primerfotograma.jpg" id="backgroundVideo">
+    <!--    <video loop autoplay poster="argazkiak/primerfotograma.jpg" id="backgroundVideo">-->
+    <video poster="argazkiak/primerfotograma.jpg" id="backgroundVideo">
         <source src="bideoak/intro_logo_desktop.mp4" type="video/mp4">
         <source src="bideoak/intro_logo_mov.mov" type="video/mov">
         <source src="bideoak/intro_logo_webm.webm" type="video/webm">
@@ -53,7 +53,8 @@
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p class="firma">Creada con Bootstrap por Txu </p><p><a href="https://github.com/inakidml/weboier">Github</a></p>
+                <p class="firma">Creada con Bootstrap por Txu </p>
+                <p><a href="https://github.com/inakidml/weboier">Github</a></p>
             </div>
         </footer>
     </div>
@@ -64,7 +65,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')
-
     </script>
     <script src="js/vendor/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -83,19 +83,21 @@
                 }
             }
         }, false);
+            video.load();
+            video.autoplay = true;
+            video.loop = true;
+        video.oncanplaythrough = function() {
+            alert("Can play through video without stopping");
+            //suppose that video src has been already set properly
 
-        //suppose that video src has been already set properly
 
-        video.load();
-        video.autoplay = true;
-        video.loop = true;
-        video.play(); //must call this otherwise can't seek on some browsers, e.g. Firefox 4
-        try {
-            video.currentTime = starttime;
-        } catch (ex) {
-            
+            video.play(); //must call this otherwise can't seek on some browsers, e.g. Firefox 4
+            try {
+                video.currentTime = starttime;
+            } catch (ex) {
+
+            }
         }
-
     </script>
 </body>
 
