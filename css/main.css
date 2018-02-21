@@ -2,8 +2,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    min-width: 100%;
-    min-height: 100%;
+    /*https://www.w3schools.com/csS/css3_object-fit.asp*/
+    object-fit: cover;
 }
 
 .contenido {
@@ -13,10 +13,12 @@
     min-width: 100%;
     min-height: 100%;
 }
-.firma{
+
+.firma {
     font-size: 10px;
 }
-body{
+
+body {
     font-family: "Open Sans Condensed";
     font-style: normal;
 }
